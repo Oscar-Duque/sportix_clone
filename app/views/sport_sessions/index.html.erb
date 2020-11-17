@@ -1,0 +1,17 @@
+<h1>All your favorite sports classes</h1>
+<h2>Don't waste more time to book one</h2>
+
+
+<div class="container">
+  <% @sport_sessions.each do |session| %>
+
+    <%= session.session_cover_picture %>
+    <%= session.sport %>
+    <%= session.title %>
+    <%= session.capacity %>
+
+
+  <% end %>
+
+
+</div>
