@@ -9,7 +9,8 @@ class SportSession < ApplicationRecord
   validates :rating, presence: true
   validates :session_cover_picture, presence: true
   validates :capacity, presence: true
-  
+
   belongs_to :users
   has_many :bookings
+  has_one_attached :photo
 end
