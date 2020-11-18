@@ -1,16 +1,68 @@
-<h1>this is the User Show</h1>
+<div class="container py-2">
+  <div class="row">
+    <div class="row justify-content-center">
+      <h1>Hello <%= @user.email %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col-4 container">
+      <div class="row justify-content-center">
+        <%= image_tag "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80", class: "avatar show_avatar" %>
+      </div>
+      <div class="row justify-content-center">
+        <p><%= @user.email %></p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-warning">Create a session</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 p-7">
+      <h3>My sessions:</h3>
+      <ul>
+       <% if @user.sport_sessions == [] %>
+        <p>you don't have any sessions</p>
+       <% else %>
+        <% @user.sport_sessions.each do |sport_session| %>
+          <li>sport: <%= sport_session.sport %></li>
+          <li>title: <%= sport_session.title %></li>
+          <li>description: <%= sport_session.description %></li>
+          <li>location: <%= sport_session.location %></li>
+          <li>start time: <%= sport_session.start_time %></li>
+          <li>duration: <%= sport_session.duration %></li>
+          <li>price: <%= sport_session.price %></li>
+          <li>capacity: <%= sport_session.capacity %></li>
+          <li>rating: <%= sport_session.rating %></li>
+          <br>
+        <% end %>
+      <% end %>
+      </ul>
+
+      <h3>My bookings:</h3>
+      <ul>
+        <% if @user.bookings == [] %>
+          <p>you don't have any bookings</p>
+        <% else %>
+        <% @user.bookings.each do |booking| %>
+          <li>Booking Date: <%= booking.booking_date %></li>
+          <li>Sport title: <%= booking.sport_session.title %> </li>
+          <li>Teacher Contact Email: <%= booking.sport_session.user.email %> </li>
+          <li>Location: <%= booking.sport_session.location %> </li>
+          <br>
+        <% end %>
+        <% end %>
+      </ul>
+          </div>
+        </div>
+      </div>
 
 
-<p><%= @user.email %></p>
 
-<ul>
-  <li>view my sessions</li>
-  <li>create a session</li>
-  <li>view my bookings</li>
-</ul>
 
- <% @user.sport_sessions.each do |sport_session| %>
-    <tr>
-      <td><%= sport_session.title %></td>
-    </tr>
-  <% end %>
+  
+
+
