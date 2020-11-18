@@ -10,5 +10,8 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create]
   end
 
-  resources :users, only: %i[show]
+
+  resources :users, only: %i[show] do
+    resources :bookings, only: %i[index]
+  end
 end

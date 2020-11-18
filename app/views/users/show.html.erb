@@ -1,0 +1,16 @@
+<h1>this is the User Show</h1>
+
+
+<p><%= @user.email %></p>
+
+<ul>
+  <li>view my sessions</li>
+  <li>create a session</li>
+  <li>view my bookings</li>
+</ul>
+
+ <% @user.sport_sessions.each do |sport_session| %>
+    <tr>
+      <td><%= sport_session.title %></td>
+    </tr>
+  <% end %>
