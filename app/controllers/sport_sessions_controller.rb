@@ -1,10 +1,11 @@
 class SportSessionsController < ApplicationController
   def index
-    @sport_sessions = SportSession.all
+    @sport_sessions = policy_scope(SportSession)
   end
 
   def new
     @sport_session = SportSession.new
+    authorize(@sport_session)
   end
 
   def create
@@ -18,6 +19,13 @@ class SportSessionsController < ApplicationController
 
   def show
     @sport_session = SportSession.find(params[:id])
+    authorize(@sport_session)
+  end
+
+  def destroy
+    authorize @sport_session
+    @sport_session.destroy
+    redirect_to sport_sessions_url
   end
 
   private
