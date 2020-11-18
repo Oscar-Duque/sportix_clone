@@ -15,10 +15,10 @@ class SportSessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @sport_session = SportSession.new(session_params)
+    @sport_session.user = current_user
     if @sport_session.save
-      redirect_to sport_session_path
+      redirect_to sport_session_path(@sport_session)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class SportSessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:sport_sessions).permit(:sport, :title, :description, :location, :start_time,
+    params.require(:sport_session).permit(:sport, :title, :description, :location, :start_time,
                                            :duration, :price, :rating, :session_cover_picture, :capacity,
                                            :created_at, :updated_at, :user_id, :photo)
   end
