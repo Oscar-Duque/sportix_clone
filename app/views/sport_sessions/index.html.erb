@@ -1,18 +1,20 @@
-<h1>All your favorite sports classes</h1>
+<h1>All your favorite sports classes in one place</h1>
 <h2>Ready to jump in?</h2>
 
-<div class="container">
-  <% @sport_sessions.each do |session| %>
-    <%= link_to sport_session do %>
-      <%= session.sport %>
-      <%= session.title %>
-      <%= session.duration %>
-      <%= session.capacity %>
-      <button class="btn btn-outline-success" type="button">More info</button>
+<div class="container ">
+  <div class="sportcards">
+    <% @sport_sessions.each do |session| %>
+      <%= link_to session do %>
+      <div class="card">
+          <%= session.sport %><br>
+          <%= session.title %><br>
+          <%= session.duration %><br>
+          <%= session.capacity %><br>
+          <button class="btn btn-outline-success" type="button">More info</button>
+
+      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
 </div>
-
-
-
-contenido de HTML
