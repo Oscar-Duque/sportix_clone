@@ -10,6 +10,6 @@ class SportSession < ApplicationRecord
   validates :session_cover_picture, presence: true
   validates :capacity, presence: true
   
-  belongs_to :users
+  belongs_to :user
   has_many :bookings
 end
