@@ -6,7 +6,7 @@ class SportSession < ApplicationRecord
   validates :start_time, presence: true
   validates :duration, presence: true
   validates :price, presence: true
-  # validates :session_cover_picture, presence: true
+
   validates :capacity, presence: true
 
   belongs_to :user
