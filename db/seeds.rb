@@ -43,7 +43,6 @@ end
 
 SportSession.all.each do |sport_session|
   new_user = User.create! :email => Faker::Internet.email, :password => '123456', :password_confirmation => '123456'
-  p new_user
   new_booking = Booking.create!(
     booking_date: Faker::Date.between(from: '2021-01-01', to: '2021-12-31'),
     user_id: new_user.id,
