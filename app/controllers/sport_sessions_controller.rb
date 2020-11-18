@@ -18,7 +18,9 @@ class SportSessionsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @sport_session = SportSession.find(params[:id])
+    authorize(@sport_session)
   end
 
   def destroy
