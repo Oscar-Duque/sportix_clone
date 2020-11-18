@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :reviews, dependent: :destroy
-  has_many :bookings, through: :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   has_many :sport_sessions
 
   has_one_attached :photo

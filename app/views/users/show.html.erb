@@ -17,14 +17,14 @@
       </div>
       <div class="row justify-content-center">
         <div class="btn-group-vertical">
-          <button type="button" class="btn btn-warning">Create a session</button>
+          <button type="button" class="btn btn-warning"><%= link_to "Create a session", new_sport_session_path %></button>
         </div>
       </div>
     </div>
     <div class="col-8 p-7">
       <h3>My sessions:</h3>
       <ul>
-       <% if @user.sport_sessions == [] %>
+        <% if @user.sport_sessions == [] %>
         <p>you don't have any sessions</p>
        <% else %>
         <% @user.sport_sessions.each do |sport_session| %>
@@ -63,6 +63,6 @@
 
 
 
-  
+
 
 
