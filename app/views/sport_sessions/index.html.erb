@@ -1,17 +1,25 @@
-<h1>All your favorite sports classes</h1>
-<h2>Don't waste more time to book one</h2>
+<div class="banner">
+</div>
 
+<div class="text">
+  <h1>All your favorite sports classes in one place</h1>
+  <h2>Ready to jump in?</h2>
+</div>
 
-<div class="container">
-  <% @sport_sessions.each do |session| %>
+<div class="container ">
+  <div class="sportcards">
+    <% @sport_sessions.each do |session| %>
 
-    <%= session.session_cover_picture %>
-    <%= session.sport %>
-    <%= session.title %>
-    <%= session.capacity %>
-
-
-  <% end %>
-
-
+      <div class="card p-3">
+        <image></image>
+        <div class="text">
+          <h3><%= session.title.upcase %></h3>
+          <p><%= session.start_time%></p>
+          <p><%= session.price%></p>
+          <p>Max. <%= session.capacity %> attendees</p>
+        </div>
+        <button class="btn btn-outline-success sticky-bottom" type="button"><%= link_to "More info", session%></button>
+      </div>
+    <% end %>
+  </div>
 </div>
