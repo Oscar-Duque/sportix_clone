@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  def show
+  def index
     @bookings = Booking.all
   end
 
@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save!
     if @booking.save
-      redirect_to user_bookings_path(current_user)
+      redirect_to user_path(current_user)
     else
       render :sport_session
     end
