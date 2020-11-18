@@ -14,4 +14,10 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[index]
     resources :sport_sessions, only: %i[new create]
   end
+
+  resources :users, only: %i[show] do
+    member do
+      get :aboutme
+    end
+  end
 end

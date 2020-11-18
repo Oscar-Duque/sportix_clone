@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def show?
     record == user
   end
+
+  def aboutme?
+    record == user
+  end
 end
