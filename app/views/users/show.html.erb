@@ -1,4 +1,4 @@
-<div class="container py-2">
+rails<div class="container py-2">
   <div class="row">
     <div class="row justify-content-center">
       <h1>Hello <%= @user.email %></h1>
@@ -38,6 +38,9 @@
           <li>capacity: <%= sport_session.capacity %></li>
           <li>rating: <%= sport_session.rating %></li>
           <br>
+          <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_dose"></i>
+          <% end %>
         <% end %>
       <% end %>
       </ul>
@@ -63,6 +66,6 @@
 
 
 
-  
+
 
 
