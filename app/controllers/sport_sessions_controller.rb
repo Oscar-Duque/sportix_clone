@@ -28,9 +28,10 @@ class SportSessionsController < ApplicationController
   end
 
   def destroy
-    authorize @sport_session
+    @sport_session = SportSession.find(params[:id])
+    authorize(@sport_session)
     @sport_session.destroy
-    redirect_to sport_sessions_url
+    redirect_to user_path(current_user)
   end
 
   private
