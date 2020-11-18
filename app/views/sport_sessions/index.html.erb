@@ -4,17 +4,17 @@
 <div class="container ">
   <div class="sportcards">
     <% @sport_sessions.each do |session| %>
-      <%= link_to session do %>
-      <div class="card">
-          <%= session.sport %><br>
-          <%= session.title %><br>
-          <%= session.duration %><br>
-          <%= session.capacity %><br>
-          <button class="btn btn-outline-success" type="button">More info</button>
 
+      <div class="card p-3">
+        <image></image>
+        <div class="text">
+          <h3><%= session.title.upcase %></h3>
+          <p><%= session.start_time%></p>
+          <p><%= session.price%></p>
+          <p>Max. <%= session.capacity %> attendees</p>
+        </div>
+        <button class="btn btn-outline-success sticky-bottom" type="button"><%= link_to "More info", session%></button>
       </div>
-      <% end %>
     <% end %>
   </div>
-
 </div>
