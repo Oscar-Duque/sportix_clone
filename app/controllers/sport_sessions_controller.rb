@@ -25,6 +25,6 @@ class SportSessionsController < ApplicationController
   def session_params
     params.require(:sport_sessions).permit(:sport, :title, :description, :location, :start_time,
                                            :duration, :price, :rating, :session_cover_picture, :capacity,
-                                           :created_at, :updated_at, :user_id, :photo))
+                                           :created_at, :updated_at, :user_id, :photo)
   end
 end
