@@ -11,7 +11,7 @@
 
   <div class = "searchbox-custom">
     <div class="form-group row">
-      <div class="col-8 no-right-padding">
+      <div class="col-8 search-form">
         <%= form_tag sport_sessions_path, method: :get do %>
           <%= text_field_tag :query,
           params[:query],
@@ -19,7 +19,7 @@
           placeholder: "Find a sport you like !"
         %>
       </div>
-      <div class="col-2 no-left-padding">
+      <div class="col-2 search-button">
          <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
       </div>
