@@ -11,14 +11,17 @@
     <% @sport_sessions.each do |session| %>
 
       <div class="card p-3">
-        <image></image>
+        <% if session.photo.present?  %>
+          <%= cl_image_tag session.photo.key, crop: :fill %>
+        <% end %>
+
         <div class="text">
           <h3><%= session.title.upcase %></h3>
           <p><%= session.start_time%></p>
           <p><%= session.price%></p>
           <p>Max. <%= session.capacity %> attendees</p>
         </div>
-        <button class="btn btn-outline-success sticky-bottom" type="button"><%= link_to "More info", session%></button>
+        <button class="custombtn sticky-bottom"><%= link_to "More info", session%></button>
       </div>
     <% end %>
   </div>
