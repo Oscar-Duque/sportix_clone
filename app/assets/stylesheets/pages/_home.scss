@@ -1,35 +1,9 @@
 // Specific CSS for your home-page
-.body {
+body {
   font: Noto Sans;
   background-color: white;
 }
 
-.banner {
-  background-image: url(https://images.unsplash.com/photo-1470753323753-3f8091bb0232?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
-  background-position: center;
-  background-size: cover;
-  height: 550px;
-  opacity: 0.85;
-}
-
-.banner-text-slogan{
-  color: black;
-  font-family: $banner-font;
-  font-size: 30px; 
-  font-weight: 400px;
-  padding-top: 5px;
-  padding-left: 20px;
-}
-
-.banner-text-info{
-  color: black;
-  font-family: $banner-font;
-  font-size: 30px; 
-  font-weight: 400px;
-  text-align: right;
-  padding-top: 460px;
-  padding-right: 20px;
-}
 
 .home-titles{
   color: black;
@@ -51,6 +25,15 @@
   margin-bottom: 40px;
 }
 
+.container {
+  padding: 50px;
+}
+
+.container img {
+  height: 200px;
+  background-size: cover;
+}
+
 .footer {
   left: 0;
   bottom: 0;
@@ -61,15 +44,7 @@
   text-align: center;
 }
 
-.container {
-  padding: 50px;
-}
-
-.container img {
-  height: 200px;
-  background-size: cover;
-}
-
+//social media icons
 .icons {
   text-align: center;
 }
@@ -97,5 +72,10 @@
 /* Twitter color */
 .fa-twitter {
   background: #55ACEE;
+  color: white;
+}
+
+.fa-gplus {
+  background: #f53b3b;
   color: white;
 }
