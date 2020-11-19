@@ -1,6 +1,12 @@
 class SportSessionsController < ApplicationController
   def index
-    @sport_sessions = policy_scope(SportSession)
+    if params[:query].present?
+      @sport_sessions = policy_scope(SportSession)
+      sql_query = "sport ILIKE :query"
+      @sport_sessions = SportSession.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @sport_sessions = policy_scope(SportSession)
+    end
   end
 
   def show
