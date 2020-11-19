@@ -7,7 +7,7 @@
 </div>
 
 <div class="container ">
-  <div class="sportcards ">
+  <div class="sportcards">
     <% @sport_sessions.each do |session| %>
 
       <div class="card p-3">
@@ -21,7 +21,7 @@
           <p><%= session.price%></p>
           <p>Max. <%= session.capacity %> attendees</p>
         </div>
-        <%= link_to "More info", session, class: "custombtn btn" %>
+        <button><%= link_to "More info", session, class: "custombtn" %></button>
       </div>
     <% end %>
   </div>
