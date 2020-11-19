@@ -17,7 +17,8 @@
     </div>
     <div class="col-sm-8">
       <div class="">
-        <h3>My sessions:</h3><br>
+        <br>
+        <h3>My sessions</h3><br>
           <% if @user.sport_sessions == [] %>
           <p>Looks like you haven’t create any classes yet<br>
           Ready to give one?</p>
@@ -39,9 +40,10 @@
           <% end %>
         <% end %>
       </div>
+      <br>
 
       <div class="">
-        <h3>My bookings:</h3><br>
+        <h3>My bookings</h3><br>
         <% if @user.bookings == [] %>
           <p>Looks like you haven’t booked any classes yet.<br>
           Ready to find one?</p>
