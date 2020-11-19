@@ -5,5 +5,5 @@ class Review < ApplicationRecord
   validates :booking_id, presence: true, uniqueness: true
 
   belongs_to :user
-  belongs_to :booking
+  # belongs_to :booking
 end
