@@ -7,17 +7,11 @@
 .card {
   border-radius: 5px;
   border-shadow: 5px 5px 5px rgba(200, 200, 200, 0.8);
+  height: 300px;
 }
 
 .custombtn {
-  position: absolute;
   bottom: 1em;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.nested-link {
-  text-decoration: none;
 }
 
 @media(max-width: 992px) {

@@ -21,7 +21,7 @@
           <p><%= session.price%></p>
           <p>Max. <%= session.capacity %> attendees</p>
         </div>
-        <button class="custombtn sticky-bottom"><%= link_to "More info", session%></button>
+        <button><%= link_to "More info", session, class: "custombtn" %></button>
       </div>
     <% end %>
   </div>
