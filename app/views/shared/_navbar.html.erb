@@ -7,6 +7,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <!-- Search form -->
+
+  <div class = "searchbox-custom">
+    <div class="form-group row">
+      <div class="col-8 no-right-padding">
+        <%= form_tag sport_sessions_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a sport you like !"
+        %>
+      </div>
+      <div class="col-2 no-left-padding">
+         <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
