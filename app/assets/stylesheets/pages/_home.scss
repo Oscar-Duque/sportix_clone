@@ -1,18 +1,58 @@
+
 // Specific CSS for your home-page
 body {
   font: Noto Sans;
-  background-color: white;
 }
 
-body .p {
-  font: Fira Sans;
+.body {
+  font: Noto Sans;
+  background-color: blueviolet;
 }
 
 .banner {
-  background-image: url('https://images.unsplash.com/photo-1502139214982-d0ad755818d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
+  background-image: url(https://images.unsplash.com/photo-1470753323753-3f8091bb0232?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
   background-position: center;
   background-size: cover;
   height: 550px;
+  opacity: 0.85;
+}
+
+.banner-text-slogan{
+  color: black;
+  font-family: $banner-font;
+  font-size: 30px; 
+  font-weight: 400px;
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
+.banner-text-info{
+  color: black;
+  font-family: $banner-font;
+  font-size: 30px; 
+  font-weight: 400px;
+  text-align: right;
+  padding-top: 460px;
+  padding-right: 20px;
+}
+
+.home-titles{
+  color: black;
+  font-family: $home-titles;
+  font-size: 30px; 
+  font-weight: 400px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.ad {
+  background-image: url(https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-position: center;
+  background-size: contain;
+  height: 200px;
+  width: 500px;
+  opacity: 0.5;
+  padding-left: 35px;
 }
 
 .footer {
@@ -33,3 +73,4 @@ body .p {
   height: 200px;
   background-size: cover;
 }
+
