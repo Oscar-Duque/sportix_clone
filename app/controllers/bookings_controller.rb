@@ -18,10 +18,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    authorize(@booking)
     @booking = Booking.find(params[:id])
-    @sport_session = @dose.sport_session
-    @sport_session.destroy
-    redirect_to user_bookings_path(current_user)
+    authorize(@booking)
+    @booking.destroy
+    redirect_to user_path(current_user)
   end
 end

@@ -20,8 +20,11 @@ User.all.each do |user|
     duration: Time.new(2021, 1, 1, 1, 0, 0),
     price: 100,
     capacity: 10,
-    user_id: user.id
+    user_id: user.id,
+    session_cover_picture: "cloudinary_id_here",
+    rating: 5
   )
+  p new_sport_session
   new_sport_session2 = SportSession.create!(
     sport: Faker::Esport.game,
     title: Faker::Company.name,
@@ -31,8 +34,11 @@ User.all.each do |user|
     duration: Time.new(2021, 1, 1, 1, 30, 0),
     price: 150,
     capacity: 20,
-    user_id: user.id
+    user_id: user.id,
+    session_cover_picture: "cloudinary_id_here",
+    rating: 5
   )
+  p new_sport_session2
 end
 
 SportSession.all.each do |sport_session|
@@ -42,10 +48,12 @@ SportSession.all.each do |sport_session|
     user_id: new_user.id,
     sport_session_id: sport_session.id
   )
+  p new_user
   new_review = Review.create!(
     rating: rand(1..5),
     commentary: Faker::Restaurant.review,
     user_id: new_booking.user_id,
     booking_id: new_booking.id
   )
+  p new_review
 end
