@@ -17,7 +17,6 @@ session1 = SportSession.new(
   price: 15,
   capacity: 15,
   user_id: user1.id,
-  session_cover_picture: "mark-adriane-FH6JcaCrYJ0-unsplash_zaetrp",
   rating: 4
 )
 file = URI.open('https://images.unsplash.com/photo-1589456506629-b2ea1a8576fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1751&q=80')
@@ -35,7 +34,6 @@ session2 = SportSession.new(
   price: 15,
   capacity: 10,
   user_id: user2.id,
-  session_cover_picture: "giorgio-trovato-iP4Ju2-4paQ-unsplash_f70x8e",
   rating: 4
 )
 file = URI.open('https://images.unsplash.com/flagged/photo-1571771710019-ca58cf80f225?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
@@ -58,7 +56,6 @@ session3 = SportSession.new(
   price: 30,
   capacity: 5,
   user_id: user3.id,
-  session_cover_picture: "felix-mittermeier-nAjil1z3eLk-unsplash_xc73ww",
   rating: 4
 )
 file = URI.open('https://images.unsplash.com/photo-1523875194681-bedd468c58bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80')
@@ -81,7 +78,6 @@ session4 = SportSession.new(
   price: 20,
   capacity: 5,
   user: user4,
-  session_cover_picture: "photo-1532798442725-41036acc7489_keovlh",
   rating: 4
 )
 file = URI.open('https://images.unsplash.com/photo-1532798442725-41036acc7489?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80')
