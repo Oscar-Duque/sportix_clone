@@ -1,4 +1,4 @@
-// Specific CSS for your home-page
+Specific CSS for your home-page
 body {
   font: Noto Sans;
 }
@@ -7,12 +7,25 @@ body .p {
   font: Fira Sans;
 }
 
-
 .banner {
   background-image: url('https://images.unsplash.com/photo-1502139214982-d0ad755818d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
   background-position: center;
   background-size: cover;
   height: 550px;
+}
+
+h1, h2, h3, h4 {
+  font-family: $headers-font;
+  color: $yellow;
+}
+
+.banner_text{
+  color: $light-gray;
+  font-family: $banner-font;
+  font-size: xx-large; 
+  font-weight: 400px;
+  margin: 10;
+  
 }
 
 .footer {
@@ -33,3 +46,4 @@ body .p {
   height: 200px;
   background-size: cover;
 }
+
