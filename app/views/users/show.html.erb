@@ -6,8 +6,8 @@
         <div class="p-2 bd-highlight rounded-pill"><%= image_tag"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80"%></div>
         <div class="p-2 bd-highlight">
           <div class="btn-group-vertical">
-            <button type="button" class="custombtn m-2"><%= link_to "Create a session", new_sport_session_path %></button>
-            <button class="custombtn m-2"><%= link_to "Book a class", sport_sessions_path %></button>
+            <%= link_to "Create a session", new_sport_session_path, class: "custombtn btn mb-2" %>
+            <%= link_to "Book a class", sport_sessions_path, class: "custombtn btn" %>
           </div>
         </div>
       </div>
