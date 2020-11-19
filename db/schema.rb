@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_002829) do
+ActiveRecord::Schema.define(version: 2020_11_19_171500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_002829) do
     t.text "description"
     t.string "location"
     t.time "start_time"
-    t.time "duration"
+    t.time "finish_time"
     t.float "price"
     t.integer "rating"
     t.string "session_cover_picture"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_002829) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "user"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

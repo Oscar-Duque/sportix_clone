@@ -1,0 +1,18 @@
+.custombtn {
+  background-color: white;
+  color: $lightorange;
+  border: 1px solid $lightorange;
+  text: center;
+  border-radius: 3px;
+  padding: 9px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 220px;
+}
+
+.custombtn:hover {
+  background-color: $lightorange;
+  color: white;
+  transition-duration: 0.3s;
+  text-decoration: none;
+}
