@@ -1,6 +1,12 @@
 class SportSessionsController < ApplicationController
   def index
-    @sport_sessions = policy_scope(SportSession)
+    if params[:query].present?
+      @sport_sessions = policy_scope(SportSession)
+      sql_query = "sport ILIKE :query"
+      @sport_sessions = SportSession.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @sport_sessions = policy_scope(SportSession)
+    end
   end
 
   def show
@@ -20,7 +26,7 @@ class SportSessionsController < ApplicationController
     @sport_session = SportSession.new(session_params)
     @sport_session.user = current_user
     authorize(@sport_session)
-    if @sport_session.save
+    if @sport_session.save!
       redirect_to user_path(current_user)
     else
       render :new
@@ -38,7 +44,7 @@ class SportSessionsController < ApplicationController
 
   def session_params
     params.require(:sport_session).permit(:sport, :title, :description, :location, :start_time,
-                                           :duration, :price, :rating, :session_cover_picture, :capacity,
+                                           :finish_time, :price, :rating, :session_cover_picture, :capacity,
                                            :created_at, :updated_at, :user_id, :photo)
   end
 end
