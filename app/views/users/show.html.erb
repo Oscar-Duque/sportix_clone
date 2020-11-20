@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container mt-4">
   <div class="row">
     <div class="col-sm-4">
-      <div class="d-flex flex-column bd-highlight justify-content-center mb-3">
+      <div class="d-flex flex-column bd-highligh align-items-center">
         <div class="p-2 bd-highlight"><h1>Hello <%= @user.first_name %></h1></div>
-        <div class="p-2 bd-highlight rounded-pill">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80" class="rounded-pill" alt="...">
+        <div class="p-2 bd-highlight">
+          <%= cl_image_tag @user.photo.key, crop: :fill, id: "userpic" %>
         </div>
         <div class="p-2 bd-highlight">
-          <div class="btn-group-vertical">
+          <div class="btn-group-vertical mt-4">
             <%= link_to "Create a session", new_sport_session_path, class: "custombtn btn mb-2" %>
             <%= link_to "Book a class", sport_sessions_path, class: "custombtn btn" %>
           </div>
@@ -24,18 +24,18 @@
               Ready to give one?</p>
           <% else %>
             <% @user.sport_sessions.each do |sport_session| %>
-          <div class="card p-2">
+          <div class="card m-4">
             <div class="card-body d-flex justify-content-between">
               <p><strong><%= sport_session.start_time.strftime('%d %b') %></strong></p>
               <p><%= sport_session.start_time.strftime('%Y') %></p>
-              <div class="d-flex flex-column bd-highlight border-right pr-2 pl-2">
+              <div class="d-flex flex-column bd-highlight border-right">
                 <div class="bd-highlight"><p><%= sport_session.title %></p></div>
-                <div class="bd-highlight"><p><%= sport_session.capacity %></p></div>
-                <div class="bd-highlight"><p><%= sport_session.price %></p></div>
+                <div class="bd-highlight"><p>Capacity: <%= sport_session.capacity %></p></div>
+                <div class="bd-highlight"><p>$<%= sport_session.price.round %></p></div>
               </div>
               <br>
               <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fa fa-trash destroy_dose"></i>
+                <i id="icone" class="far fa-trash-alt"></i>
               <% end %>
             </div>
           </div>
@@ -52,18 +52,21 @@
           Ready to find one?</p>
         <% else %>
         <% @user.bookings.each do |booking| %>
-          <div class="card p-2">
+          <div class="card m-4 sessioncard">
             <div class="card-body d-flex justify-content-between">
-              <p><strong><%= booking.booking_date.strftime('%d %b')%></strong></p>
-              <p><%= booking.booking_date.strftime('%Y') %></p>
-              <div class="d-flex flex-column bd-highlight border-right pr-2 pl-2">
-                <div class="bd-highlight"><p><%= booking.sport_session.title %></p></div>
-                <div class="bd-highlight"><p>With: <%= booking.sport_session.user.first_name %></p></div>
+              <div class="flex-column border-right pr-4">
+                <p><strong><%= booking.booking_date.strftime('%d %b')%></strong></p>
+                <p><strong><%= booking.booking_date.strftime('%Y')%></strong></p>
+                <p><%= booking.sport_session.start_time.strftime('%H')%>h</p>
               </div>
-              <p><%= booking.sport_session.location%></p>
+              <div class="flex-column align-items-left">
+                <h5><%= booking.sport_session.title.upcase %></h5>
+                <p>With: <%= booking.sport_session.user.first_name %></p>
+                <p>Where: in  <%= booking.sport_session.location%></p>
+              </div>
             <br>
             <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fa fa-trash destroy_dose"></i>
+              <i id="icone" class="far fa-trash-alt"></i>
            </div>
           </div>
         <% end %>
@@ -71,8 +74,7 @@
         <% end %>
       </div>
 
+
     </div>
   </div>
 </div>
-
-
