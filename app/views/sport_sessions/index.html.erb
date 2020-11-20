@@ -1,26 +1,28 @@
 <div class ="titles-box">
   <div class="home-titles">
-    All your favorite sports classes
+    All sessions near you
   </div>
 </div>
 
 <div class="container ">
   <div class="sportcards ">
     <% @sport_sessions.each do |session| %>
-
       <div class="card p-3">
         <% if session.photo.present?  %>
           <%= cl_image_tag session.photo.key, crop: :fill %>
         <% end %>
 
-        <div class="text">
-          <h3><%= session.title.upcase %></h3>
-          <p><%= session.start_time%></p>
-          <p><%= session.price%></p>
-          <p>Max. <%= session.capacity %> attendees</p>
+        <div class="session-card-titles">
+          <%= session.title.upcase %>
         </div>
-        <%= link_to "More info", session, class: "custombtn btn" %>
-      </div>
+        <br>
+        <div>
+          <p>Session time: <%= session.start_time.strftime('%H')%>:00hrs</p>
+          <p>Price: £<%= session.price%></p>
+          <p>Max. <%= session.capacity %> attendees</p>
+        </div class="session-card-button-align">
+          <%= link_to "More info", session, class: "custombtn btn" %>
+        </div>
     <% end %>
   </div>
 </div>
