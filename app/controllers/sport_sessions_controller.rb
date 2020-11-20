@@ -26,8 +26,8 @@ class SportSessionsController < ApplicationController
     @sport_session = SportSession.new(session_params)
     @sport_session.user = current_user
     authorize(@sport_session)
-    if @sport_session.save!
-      flash[:notice] = "Congratulations #{@user.first_name}, you created a sport session!"
+    if @sport_session.save
+      flash[:notice] = "Sport Session successfully added!"
       redirect_to user_path(current_user)
     else
       render :new
@@ -38,6 +38,7 @@ class SportSessionsController < ApplicationController
     @sport_session = SportSession.find(params[:id])
     authorize(@sport_session)
     @sport_session.destroy
+    flash[:alert] = "Sport Session deleted"
     redirect_to user_path(current_user)
   end
 

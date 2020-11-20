@@ -1,5 +1,5 @@
 class SportSession < ApplicationRecord
-  validates :sport, presence: true
+  # validates :sport, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :location, presence: true
