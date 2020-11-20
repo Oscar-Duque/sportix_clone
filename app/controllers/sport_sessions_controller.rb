@@ -27,6 +27,7 @@ class SportSessionsController < ApplicationController
     @sport_session.user = current_user
     authorize(@sport_session)
     if @sport_session.save!
+      flash[:notice] = "Congratulations #{@user.first_name}, you created a sport session!"
       redirect_to user_path(current_user)
     else
       render :new
