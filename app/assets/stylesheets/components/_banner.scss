@@ -1,0 +1,29 @@
+
+.banner {
+  background-image: url('https://images.unsplash.com/photo-1470753323753-3f8091bb0232?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-position: center;
+  background-size: cover;
+  height: 550px;
+  opacity: 0.85;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.banner-text-slogan{
+  color: black;
+  font-family: $banner-font;
+  font-size: 30px; 
+  font-weight: 400px;
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
+.banner-text-info{
+  color: black;
+  font-family: $banner-font;
+  font-size: 30px; 
+  font-weight: 400px;
+  text-align: right;
+  padding-top: 460px;
+  padding-right: 20px;
+}
