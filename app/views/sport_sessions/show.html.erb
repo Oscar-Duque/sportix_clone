@@ -9,12 +9,13 @@
       <div class="text">
         <h1><%= @sport_session.title%></h1>
         <h4><%= @sport_session.description%></h4>
-        <p>$<%= @sport_session.price.round%></p>
-
+        <br>
         <div class="d-flex flex-row bd-highlight">
           <div class="bd-highlight"><p>60min --</p></div>
           <div class="bd-highlight ml-1"><p>Max <%= @sport_session.capacity%> people</p></div>
         </div>
+        <p><%= @sport_session.location%></p>
+        <p><strong>£ <%= @sport_session.price.round%></strong></p>
       </div>
 
       <div class="form">
@@ -30,16 +31,10 @@
 
         <% end %>
         <br>
-        <br>
       </div>
     </div>
-
     <div class="container mt-4 border-top">
       <br>
-      <br>
-      <h1>Location</h1>
-
-      A MAP IN COMING
     </div>
   </div>
 </div>
