@@ -9,3 +9,20 @@
   // padding-left: 120px;
   opacity: 0.7;
 }
+
+.session-card-style {
+  border-radius: 8px;
+  background-color: rgba(252, 229, 215, 0.253);
+}
+
+.session-ad {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  align-content: center;
+}
+
+.session-ad-text {
+  color:rgba(250, 229, 211, 0.98);
+  font-family: $banner-font;
+  font-size: 25px;   
+}
