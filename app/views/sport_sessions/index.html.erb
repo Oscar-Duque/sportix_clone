@@ -1,49 +1,136 @@
 <div class ="titles-box">
   <div class="home-titles">
-    All your favorite sports classes
+    All sessions near you
   </div>
 </div>
 
-<div class="container ">
-  <div class="sportcards ">
+<div class="container">
+  <div class="sportcards">
     <% @sport_sessions.each do |session| %>
-
-      <div class="card p-3">
+      <div class="card p-3 session-card-style">
         <% if session.photo.present?  %>
           <%= cl_image_tag session.photo.key, crop: :fill %>
         <% end %>
 
-        <div class="text">
-          <h3><%= session.title.upcase %></h3>
-          <p><%= session.start_time%></p>
-          <p><%= session.price%></p>
-          <p>Max. <%= session.capacity %> attendees</p>
+        <div class="session-card-titles">
+          <%= session.title.upcase %>
         </div>
-        <%= link_to "More info", session, class: "custombtn btn" %>
-      </div>
+        <br>
+        <div>
+          <p>🕓<strong> Session time: <%= session.start_time.strftime('%H')%>:00hrs </strong> </p>
+          <p>💰 Price: £<%= session.price%>0</p>
+          <p>🧍‍♂️🧍‍♀️ <strong> Max. <%= session.capacity %> attendees </strong> </p>
+        </div>
+          <a href="#" class="homebtn btn-block">More info</a>
+        </div>
     <% end %>
   </div>
 </div>
 
 
-<h2>Discover more category</h2>
-<br>
-<br>
+<div class ="titles-box">
+  <div class="home-titles">
+    Discover more activites
+  </div>
+</div>
 
-<div class="d-flex bd-highlight">
-  <div class="p-2 bd-highlight">
-    <div class="category" style="background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
-      <h5><strong>SURFING</strong></h5>
+<div class="session-ad">
+  <div class="d-flex bd-highlight">
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80')">
+        <h5 class="session-ad-text"> KARATE </h5>
+      </div>
     </div>
-  </div>
-  <div class="p-2 bd-highlight">
-    <div class="category" style="background-image: url('https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
-      <h5><strong>BIKING</strong></h5>
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1603802081225-7b6c6bf536a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80')">
+        <h5 class="session-ad-text"> BASKET BALL </h5>
+      </div>
     </div>
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1604292466471-e204b93276ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+        <h5 class="session-ad-text"> Field Hockey </h5>
+      </div>
+    </div>  
   </div>
-  <div class="p-2 bd-highlight">
-    <div class="category" style="background-image: url('https://images.unsplash.com/photo-1550035213-ad21a6cf4288?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
-      <h5><strong>SKATING</strong></h5>
+</div>
+
+<div class="session-ad">
+  <div class="d-flex bd-highlight">
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1519046947096-f43d6481532b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+        <h5 class="session-ad-text"> VOLLEYBALL </h5>
+      </div>
+    </div>
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1582484122761-676393e8626b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+        <h5 class="session-ad-text"> ICE SKATING </h5>
+      </div>
+    </div>
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1552435053-01c010307582?ixlib=rb-1.2.1&auto=format&fit=crop&w=1125&q=80')">
+        <h5 class="session-ad-text"> CRICKET </h5>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<div class="session-ad">
+  <div class="d-flex bd-highlight">
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1605629911437-9e6a478fbe20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2007&q=80')">
+        <h5 class="session-ad-text"> FOOTBALL </h5>
+      </div>
+    </div>
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+        <h5 class="session-ad-text"> TENNNIS </h5>
+      </div>
+    </div>
+    <div class="p-2 bd-highlight">
+      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+        <h5 class="session-ad-text"> Surf </h5>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<div class ="titles-box">
+  <div class="home-titles">
+    Checkout the favourites
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card rounded" style="width: 20rem;">
+        <img class="card-img-top" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1694&q=80')">
+        <div class="card-body">
+          <h5 class="card-title">Yoga</h5>
+          <p class="card-text">Yoga designed for real people—whether you’re a busy person in need of a quick morning energy boost, or a traveler looking to relax with a yoga nidra before sleep. Work up a sweat with an advanced vinyasa flow, or brush up on the basics in our accessible beginner classes. Whatever your level of experience, life stage, strength to mid-workday calm—we’ll help you create an online yoga practice that’s uniquely your own.</p>
+          <a href="#" class="homebtn btn-block">More info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card rounded" style="width: 20rem;">
+        <img class="card-img-top" style="background-image: url('https://images.unsplash.com/photo-1589456506629-b2ea1a8576fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1751&q=80')">
+        <div class="card-body">
+          <h5 class="card-title">Boxing</h5>
+          <p class="card-text">The right boxing workout for you will probably depend on your fitness goals and the environment you’re looking for. A typical class consists of floor work (where you’re likely on a padded floor doing conditioning drills like jumping jacks, sit ups, or quick feet), ring work, and bag or partner work. But classes can feel very different!</p>
+          <a href="#" class="homebtn btn-block">More info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card rounded" style="width: 20rem;">
+        <img class="card-img-top" style="background-image: url('https://images.unsplash.com/photo-1526485856375-9110812fbf35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+        <div class="card-body">
+          <h5 class="card-title">Surf</h5>
+          <p class="card-text">Surfing lessons are one of the most unexpectedly amazing experiences you can have Lessons take place in Mexico. Licensed surfing professionals will show you how to read the waves, position your take off, and stand up!</p>
+          <a href="#" class="homebtn btn-block">More info</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,17 +1,23 @@
 .category {
+
+  h5 {
+    text-align: center;
+    
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   background-position: center;
-  width: 450px;
+  width: 380px;
   height: 150px;
   border-radius: 15px;
   color: black;
   text-align: center;
   margin: auto;
   position : relative;
-  h5 {
-    position: absolute;
-    top: 60px;
-    left: 190px;
-  }
+  opacity: 0.80;
 }
+
+ 
 
