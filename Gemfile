@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'geocoder'
 # Needed to add maps
+gem 'cloudinary', '~> 1.16.0'
+# Needed for images
 
 gem 'dotenv-rails', groups: [:development, :test]
 
