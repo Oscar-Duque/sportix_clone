@@ -1,5 +1,8 @@
-<h1>new sport session</h1>
+<br>
+<br>
+<div class="d-flex flex-column bd-highlight mb-3 align-items-center">
+  <div class="p-2 bd-highlight" style="color: #FBAB7D"><h1>GREAT, GO AHEAD TO CREATE YOUR NEW SPORT SESSION !</h1></div>
+</div>
+  <div class="p-2 bd-highlight"><%= render 'form', sport_session: @sport_session %></div>
+  <div class="p-2 bd-highlight"><%= link_to 'back', sport_sessions_path, class: "custombtn btn m-4" %></div>
 
-<%= render 'form', sport_session: @sport_session %>
-
-<%= link_to 'back', sport_sessions_path %>
