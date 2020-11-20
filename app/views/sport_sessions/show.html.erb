@@ -1,16 +1,20 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-4">
   <div class="row">
     <div class="col-6">
-      <div class="spot-image" style="height: 600px; background-image: url('https://images.unsplash.com/photo-1599447292411-637efa33e046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')">
-      </div>
+      <%= cl_image_tag @sport_session.photo.key, crop: :fill, id:"sportpic" %>
     </div>
 
     <div class="col-6">
 
       <div class="text">
         <h1><%= @sport_session.title%></h1>
-        <p><%= @sport_session.start_time%></p>
-        <p><%= @sport_session.price%></p>
+        <h4><%= @sport_session.description%></h4>
+        <p>$<%= @sport_session.price.round%></p>
+
+        <div class="d-flex flex-row bd-highlight">
+          <div class="bd-highlight"><p>60min --</p></div>
+          <div class="bd-highlight ml-1"><p>Max <%= @sport_session.capacity%> people</p></div>
+        </div>
       </div>
 
       <div class="form">
@@ -21,9 +25,21 @@
           <option value="2020-11-25T12:00:00">Wednesday, Nov 25</option>
         </select>
         <br>
-        <%= f.submit "Book me", class: "btn btn-primary" %>
+        <%= f.submit "Book me", class: "formbtn btn btn-block"%>
+        <%= link_to "Changed your mind?", sport_sessions_path, class: "changemindbtn btn" %>
+
         <% end %>
+        <br>
+        <br>
       </div>
+    </div>
+
+    <div class="container mt-4 border-top">
+      <br>
+      <br>
+      <h1>Location</h1>
+
+      A MAP IN COMING
     </div>
   </div>
 </div>
