@@ -26,7 +26,8 @@
             <% @user.sport_sessions.each do |sport_session| %>
           <div class="card p-2">
             <div class="card-body d-flex justify-content-between">
-              <p><%= sport_session.start_time %></p>
+              <p><strong><%= sport_session.start_time.strftime('%d %b') %></strong></p>
+              <p><%= sport_session.start_time.strftime('%Y') %></p>
               <div class="d-flex flex-column bd-highlight border-right pr-2 pl-2">
                 <div class="bd-highlight"><p><%= sport_session.title %></p></div>
                 <div class="bd-highlight"><p><%= sport_session.capacity %></p></div>
@@ -42,6 +43,7 @@
           <% end %>
       </div>
       <br>
+
 
       <div class="">
         <h3>My bookings</h3><br>
@@ -72,3 +74,5 @@
     </div>
   </div>
 </div>
+
+
