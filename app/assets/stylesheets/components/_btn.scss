@@ -76,3 +76,33 @@
     text-decoration: none;
   }
 }
+
+.calltoaction {
+  color: #f8e1cd;
+  font-style: italic;
+  &:hover {
+    transition-duration: 0.3s;
+    text-decoration: none;
+  }
+
+}
+
+
+.changemindbtn {
+  background-color: white;
+  color: $lightorange ;
+  text: center;
+  border-radius: 3px !important;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100% !important;
+  font-size: 10px !important;
+  text-transform: uppercase;;
+  &:hover {
+    background-color: white;
+    color: $lightorange;
+    transition-duration: 0.3s;
+    text-decoration: none;
+  }
+}

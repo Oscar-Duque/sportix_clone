@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save!
     if @booking.save
+      flash[:notice] = "Sport Session successfully booked!"
       redirect_to user_path(current_user)
     else
       render :sport_session
@@ -21,6 +22,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize(@booking)
     @booking.destroy
+    flash[:alert] = "Booking deleted"
     redirect_to user_path(current_user)
   end
 end
