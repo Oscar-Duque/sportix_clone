@@ -109,7 +109,151 @@ p Booking.create!(
   sport_session_id: user1.sport_sessions.first.id
 )
 
-=begin 
+# session 2 Oscar
+
+session5 = SportSession.new(
+  sport: 'krav maga',
+  title: 'Krav Maga',
+  description: 'Learn to protect yourself with the most efficient self defense system',
+  location: 'Coyoacan, Mexico City',
+  start_time: Time.new(2021, 1, 3, 7, 0, 0),
+  finish_time: Time.new(2021, 1, 3, 8, 0, 0),
+  price: 50,
+  capacity: 10,
+  user: user4,
+  rating: 5
+)
+file = URI.open('https://images.unsplash.com/photo-1577998555981-6e798325914e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1486&q=80')
+session5.photo.attach(io: file, filename: 'kravmaga.jpeg', content_type: 'image/jpeg')
+p session5.save!
+
+# session 3 Oscar
+
+session6 = SportSession.new(
+  sport: 'golf',
+  title: 'Golf',
+  description: 'Even presidents need to relax sometimes !',
+  location: 'The White House, Washington D.C.',
+  start_time: Time.new(2021, 2, 1, 7, 0, 0),
+  finish_time: Time.new(2021, 2, 1, 8, 0, 0),
+  price: 200,
+  capacity: 3,
+  user: user4,
+  rating: 5
+)
+file = URI.open('https://ewscripps.brightspotcdn.com/dims4/default/3e98cab/2147483647/strip/true/crop/640x360+0+60/resize/1280x720!/quality/90/?url=https%3A%2F%2Fsharing.fox4now.com%2Fsharescnn%2Fphoto%2F2018%2F03%2F03%2FGettyImages-148110469_1520103103609_79900669_ver1.0_640_480.jpg')
+session6.photo.attach(io: file, filename: 'golf.jpeg', content_type: 'image/jpeg')
+p session6.save!
+
+# session 4 Oscar
+
+session7 = SportSession.new(
+  sport: 'badminton',
+  title: 'Badminton',
+  description: 'Stay in shape with this advanced badminton course',
+  location: 'Tepito, CDMX',
+  start_time: Time.new(2020, 12, 1, 7, 0, 0),
+  finish_time: Time.new(2020, 12, 1, 8, 0, 0),
+  price: 25,
+  capacity: 15,
+  user: user4,
+  rating: 3
+)
+file = URI.open('https://images.unsplash.com/photo-1602861067659-217e3898a90f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+session7.photo.attach(io: file, filename: 'badminton.jpeg', content_type: 'image/jpeg')
+p session7.save!
+
+# session 5 Oscar
+
+session8 = SportSession.new(
+  sport: 'fencing',
+  title: 'Fencing',
+  description: 'The thrill of sword duels, without the risks of bleeding out..',
+  location: '11th District, Paris',
+  start_time: Time.new(2021, 2, 1, 5, 0, 0),
+  finish_time: Time.new(2021, 2, 1, 7, 0, 0),
+  price: 50,
+  capacity: 12,
+  user: user4,
+  rating: 5
+)
+file = URI.open('https://images.unsplash.com/photo-1529751480052-2f3f1839834e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+session8.photo.attach(io: file, filename: 'fencing.jpeg', content_type: 'image/jpeg')
+p session8.save!
+
+# session 6 Oscar
+
+session9 = SportSession.new(
+  sport: 'chess',
+  title: 'Chess for beginners',
+  description: 'Build a logical and strong mind while having fun !',
+  location: 'Santa Fe, Mexico City',
+  start_time: Time.new(2021, 1, 13, 7, 0, 0),
+  finish_time: Time.new(2021, 1, 13, 9, 0, 0),
+  price: 45,
+  capacity: 13,
+  user: user4,
+  rating: 3
+)
+file = URI.open('https://images.unsplash.com/flagged/photo-1570551502611-c590dc45f644?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+session9.photo.attach(io: file, filename: 'chess_for_beginners.jpeg', content_type: 'image/jpeg')
+p session9.save!
+
+# session 7 Oscar
+
+session10 = SportSession.new(
+  sport: 'archery',
+  title: 'Archery for Sharpshooters',
+  description: 'Reach a high level using first class bows and arrows',
+  location: 'Berlin, Germany',
+  start_time: Time.new(2021, 3, 1, 7, 0, 0),
+  finish_time: Time.new(2021, 3, 1, 9, 0, 0),
+  price: 250,
+  capacity: 10,
+  user: user4,
+  rating: 3
+)
+file = URI.open('https://images.unsplash.com/photo-1485802240079-a8245c843b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+session10.photo.attach(io: file, filename: 'archery.jpeg', content_type: 'image/jpeg')
+p session10.save!
+
+# session 8 Oscar
+
+session11 = SportSession.new(
+  sport: 'basketball',
+  title: 'basketball',
+  description: 'Relax and stay fit practicing basketball in CDMX',
+  location: 'Condesa, Mexico City',
+  start_time: Time.new(2020, 12, 1, 7, 0, 0),
+  finish_time: Time.new(2020, 12, 1, 8, 0, 0),
+  price: 15,
+  capacity: 12,
+  user: user4,
+  rating: 3
+)
+file = URI.open('https://images.unsplash.com/photo-1519861531473-9200262188bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+session11.photo.attach(io: file, filename: 'basketball.jpeg', content_type: 'image/jpeg')
+p session11.save!
+
+# session 9 Oscar
+
+session12 = SportSession.new(
+  sport: 'crossfit',
+  title: 'crossfit',
+  description: 'Not for newbies. Prepare to suffer !',
+  location: 'Chapultepec, Mexico City',
+  start_time: Time.new(2021, 4, 1, 7, 0, 0),
+  finish_time: Time.new(2021, 4, 1, 8, 0, 0),
+  price: 25,
+  capacity: 30,
+  user: user4,
+  rating: 2
+)
+file = URI.open('https://images.unsplash.com/photo-1526401485004-46910ecc8e51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+session12.photo.attach(io: file, filename: 'crossfit.jpeg', content_type: 'image/jpeg')
+p session12.save!
+
+=begin
 User.all.each do |user|
   new_sport_session = SportSession.create!(
     sport: 'yoga',
@@ -139,7 +283,7 @@ User.all.each do |user|
     rating: 5
   )
   p new_sport_session2
-end 
+end
 =end
 
 ######## For every existing sport_session creates a user and book a session ########
@@ -158,5 +302,5 @@ p new_review = Review.create!(
     rating: rand(3..5),
     commentary: Faker::Restaurant.review,
     booking_id: new_booking.id
-  ) 
+  )
 =end
