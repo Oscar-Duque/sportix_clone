@@ -1,0 +1,17 @@
+.category {
+  background-size: cover;
+  width: 450px;
+  height: 150px;
+  border-radius: 15px;
+  color: black;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.imgcategory {
+  position: absolute;
+  z-index: 1;
+  width: 400px;
+  height: 170px;
+}
