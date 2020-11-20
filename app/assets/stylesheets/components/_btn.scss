@@ -76,3 +76,13 @@
     text-decoration: none;
   }
 }
+
+.calltoaction {
+  color: #f8e1cd;
+  font-style: italic;
+  &:hover {
+    transition-duration: 0.3s;
+    text-decoration: none;
+  }
+
+}
