@@ -1,11 +1,17 @@
 <div class="banner">
   <div class="slogan-text">
     Workout anywhere Teach anyone
+
+
   </div>
+
+
   <div class="slogan-text-info">
-    Book or Coach  on-demand
+    <%= link_to "Book or Coach  on-demand", sport_sessions_path, class: "calltoaction" %>
     <br>
-    join a group or create one
+    <%= link_to "join a group or create one  >>", sport_sessions_path, class: "calltoaction" %>
+
+    <br>
   </div>
 </div>
 
@@ -95,15 +101,4 @@
   <div class="ad-text">
     YOLO
   </div>
-</div>
-
-  <div class="footer icons">
-    <div class="footer-text">
-      <strong>BOOK</strong>
-      <br>
-      <strong>CREATE</strong>
-    </div>
-    <div class="footer-text-small">
-      STAY MOTIVATED
-    </div>
 </div>
