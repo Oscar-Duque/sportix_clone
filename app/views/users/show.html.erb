@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="d-flex flex-column bd-highligh align-items-center">
-        <div class="p-2 bd-highlight"><h1>Hello <%= @user.first_name %></h1></div>
+        <div class="p-2 bd-highlight"><h1 class="text-center">Hello <%= @user.first_name %></h1></div>
         <div class="p-2 bd-highlight">
           <%= cl_image_tag @user.photo.key, crop: :fill, id: "userpic" %>
         </div>
@@ -19,10 +19,10 @@
       <div class="choice">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Sessions</a>
+      <a class="nav-link active navlink" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">SPORT SESSIONS</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Bookings</a>
+      <a class="nav-link navlink" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">BOOKINGS</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -33,18 +33,26 @@
                 Ready to give one?</p>
             <% else %>
               <% @user.sport_sessions.each do |sport_session| %>
-            <div class="card m-4">
+            <div class="">
               <div class="card-body d-flex justify-content-between sessioncard">
-                <p><strong><%= sport_session.start_time.strftime('%d %b') %></strong></p>
-                <p><%= sport_session.start_time.strftime('%Y') %></p>
-                <div class="d-flex flex-column bd-highlight border-right">
-                  <div class="bd-highlight"><p><%= sport_session.title %></p></div>
+                <div class="date mr-3">
+                  <div class="d-flex flex-column border-right pr-4">
+                    <p style="font-size: 42px"><strong><%= sport_session.start_time.strftime('%d')%></strong></p>
+                    <p><%= sport_session.start_time.strftime('%b') %> 21</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-column bd-highlight  bookingdescription">
+                  <div class="bd-highlight"><h5><%= sport_session.title.upcase %></h5></div>
                   <div class="bd-highlight"><p>Capacity: <%= sport_session.capacity %></p></div>
                   <div class="bd-highlight"><p>$<%= sport_session.price.round %></p></div>
+                  <div class="bd-highlight"><p>Where: in  <%= sport_session.location%></p></div>
+
                 </div>
                 <br>
-                <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <div class="bkgaction">
+                  <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
                   <i id="icone" class="far fa-trash-alt"></i>
+                </div>
                 <% end %>
               </div>
             </div>
@@ -61,12 +69,15 @@
           <% @user.bookings.each do |booking| %>
             <div class="card m-4 sessioncard">
               <div class="card-body d-flex justify-content-between">
-                <div class="flex-column border-right pr-4">
-                  <p><strong><%= booking.booking_date.strftime('%d %b')%></strong></p>
-                  <p><strong><%= booking.booking_date.strftime('%Y')%></strong></p>
-                  <p><%= booking.sport_session.start_time.strftime('%H')%>h</p>
+                <div class="date mr-3">
+                  <div class="d-flex flex-column pr-4">
+                    <p style="font-size: 42px"><strong><%= booking.booking_date.strftime('%d')%></strong></p>
+                    <div class="d-flex flex-row pr-4">
+                      <p><%= booking.booking_date.strftime('%b')%> <%= booking.booking_date.strftime('%y')%></p>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex-column align-items-left">
+                <div class="flex-column align-items-left bookingdescription ml-4">
                   <h5><%= booking.sport_session.title.upcase %></h5>
                   <p>With: <%= booking.sport_session.user.first_name %></p>
                   <p>Where: in  <%= booking.sport_session.location%></p>

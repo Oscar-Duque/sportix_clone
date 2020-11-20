@@ -1,6 +1,10 @@
 .sessioncard {
-  background-color: $bookingcard;
-  width: 820px;
+  width: 100%;
   height: 140px;
-  box-shadow: 0.5px 0.5px 0.5px $pcolor;
+  border-bottom: 1px solid $linecolor;
+}
+
+.bookingdescription {
+  flex-grow: 1;
+  margin-left: 2px;
 }
