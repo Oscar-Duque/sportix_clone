@@ -21,84 +21,85 @@
           <p>💰 Price: £<%= session.price%>0</p>
           <p>🧍‍♂️🧍‍♀️ <strong> Max. <%= session.capacity %> attendees </strong> </p>
         </div>
-          <a href="#" class="homebtn btn-block">More info</a>
+          <%= link_to "More info", session, class: "formbtn btn" %>
         </div>
     <% end %>
   </div>
 </div>
 
+  <div class ="titles-box">
+    <div class="home-titles">
+      Discover more activites
+    </div>
+  </div>
+<div class="container">
+  <div class="session-ad">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80')">
+          <h5 class="session-ad-text"> KARATE </h5>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1603802081225-7b6c6bf536a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80')">
+          <h5 class="session-ad-text"> BASKET BALL </h5>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1604292466471-e204b93276ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+          <h5 class="session-ad-text"> Field Hockey </h5>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class ="titles-box">
-  <div class="home-titles">
-    Discover more activites
+  <div class="session-ad">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1519046947096-f43d6481532b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+          <h5 class="session-ad-text"> VOLLEYBALL </h5>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1582484122761-676393e8626b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+          <h5 class="session-ad-text"> ICE SKATING </h5>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1552435053-01c010307582?ixlib=rb-1.2.1&auto=format&fit=crop&w=1125&q=80')">
+          <h5 class="session-ad-text"> CRICKET </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-ad">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1605629911437-9e6a478fbe20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2007&q=80')">
+          <h5 class="session-ad-text"> FOOTBALL </h5>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+          <h5 class="session-ad-text"> TENNNIS </h5>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="category" style="background-image: url('https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+          <h5 class="session-ad-text"> Surf </h5>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="session-ad">
-  <div class="d-flex bd-highlight">
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80')">
-        <h5 class="session-ad-text"> KARATE </h5>
-      </div>
+  <div class ="titles-box">
+    <div class="home-titles">
+      Checkout the favourites
     </div>
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1603802081225-7b6c6bf536a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80')">
-        <h5 class="session-ad-text"> BASKET BALL </h5>
-      </div>
-    </div>
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1604292466471-e204b93276ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
-        <h5 class="session-ad-text"> Field Hockey </h5>
-      </div>
-    </div>  
   </div>
-</div>
 
-<div class="session-ad">
-  <div class="d-flex bd-highlight">
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1519046947096-f43d6481532b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
-        <h5 class="session-ad-text"> VOLLEYBALL </h5>
-      </div>
-    </div>
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1582484122761-676393e8626b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
-        <h5 class="session-ad-text"> ICE SKATING </h5>
-      </div>
-    </div>
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1552435053-01c010307582?ixlib=rb-1.2.1&auto=format&fit=crop&w=1125&q=80')">
-        <h5 class="session-ad-text"> CRICKET </h5>
-      </div>
-    </div>  
-  </div>
-</div>
-
-<div class="session-ad">
-  <div class="d-flex bd-highlight">
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1605629911437-9e6a478fbe20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2007&q=80')">
-        <h5 class="session-ad-text"> FOOTBALL </h5>
-      </div>
-    </div>
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
-        <h5 class="session-ad-text"> TENNNIS </h5>
-      </div>
-    </div>
-    <div class="p-2 bd-highlight">
-      <div class="category" style="background-image: url('https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
-        <h5 class="session-ad-text"> Surf </h5>
-      </div>
-    </div>  
-  </div>
-</div>
-
-<div class ="titles-box">
-  <div class="home-titles">
-    Checkout the favourites
-  </div>
-</div>
 
 <div class="container">
   <div class="row">
@@ -134,3 +135,6 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>

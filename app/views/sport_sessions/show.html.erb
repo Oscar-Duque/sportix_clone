@@ -20,9 +20,9 @@
       <div class="form">
         <%= simple_form_for [ @sport_session, @booking ] do |f| %>
         <select class="form-control" name="booking_date">
-          <option value="2020-11-18T12:00:00">Wednesday, Nov 18</option>
-          <option value="2020-11-20T12:00:00">Friday, Nov 20</option>
           <option value="2020-11-25T12:00:00">Wednesday, Nov 25</option>
+          <option value="2020-11-27T12:00:00">Friday, Nov 27</option>
+          <option value="2020-11-30T12:00:00">Monday, Nov 30</option>
         </select>
         <br>
         <%= f.submit "Book me", class: "formbtn btn btn-block"%>

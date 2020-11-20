@@ -19,52 +19,56 @@
       <div class="choice">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active navlink" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">SPORT SESSIONS</a>
+      <a class="nav-link navlink active " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">BOOKINGS</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link navlink" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">BOOKINGS</a>
+      <a class="nav-link navlink" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">SPORT SESSIONS</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="">
             <% if @user.sport_sessions == [] %>
-              <p>Looks like you haven’t create any classes yet<br>
-                Ready to give one?</p>
+            <div class="container mt-4">
+              <p style="color: #929292;"><em>Looks like you haven’t create any classes yet<br>
+                Ready to give one?</em></p>
+            </div>
             <% else %>
               <% @user.sport_sessions.each do |sport_session| %>
-            <div class="">
-              <div class="card-body d-flex justify-content-between sessioncard">
+            <div class="card m-4 sessioncard">
+              <div class="card-body d-flex justify-content-between">
                 <div class="date mr-3">
-                  <div class="d-flex flex-column border-right pr-4">
+                  <div class="d-flex flex-column pr-4">
                     <p style="font-size: 42px"><strong><%= sport_session.start_time.strftime('%d')%></strong></p>
-                    <p><%= sport_session.start_time.strftime('%b') %> 21</p>
+                    <div class="d-flex flex-row pr-4">
+                      <p><%= sport_session.start_time.strftime('%b') %> 21</p>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex flex-column bd-highlight  bookingdescription">
-                  <div class="bd-highlight"><h5><%= sport_session.title.upcase %></h5></div>
-                  <div class="bd-highlight"><p>Capacity: <%= sport_session.capacity %></p></div>
-                  <div class="bd-highlight"><p>$<%= sport_session.price.round %></p></div>
-                  <div class="bd-highlight"><p>Where: in  <%= sport_session.location%></p></div>
-
+                <div class="flex-column align-items-left bookingdescription ml-4">
+                  <h5><%= sport_session.title.upcase %></h5>
+                  <p>Capacity: <%= sport_session.capacity %></p>
+                  <p>$<%= sport_session.price.round %></p>
+                  <p>Where: in  <%= sport_session.location%></p>
                 </div>
-                <br>
-                <div class="bkgaction">
-                  <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i id="icone" class="far fa-trash-alt"></i>
-                </div>
+              <br>
+                <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="icone" class="far fa-trash-alt"></i>
                 <% end %>
-              </div>
+             </div>
             </div>
+
               <% end %>
             <% end %>
         </div>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="">
           <% if @user.bookings == [] %>
-            <p>Looks like you haven’t booked any classes yet.<br>
-            Ready to find one?</p>
+          <div class="container">
+            <p style="color: #929292;"><em>Looks like you haven’t booked any classes yet.<br>
+            Ready to find one?</em></p>
+          </div>
           <% else %>
           <% @user.bookings.each do |booking| %>
             <div class="card m-4 sessioncard">
