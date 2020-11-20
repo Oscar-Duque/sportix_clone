@@ -16,65 +16,77 @@
 
     </div>
     <div class="col-sm-8">
+      <div class="choice">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Sessions</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Bookings</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="">
-        <br>
-        <h3>My sessions</h3><br>
-          <% if @user.sport_sessions == [] %>
-            <p>Looks like you haven’t create any classes yet<br>
-              Ready to give one?</p>
-          <% else %>
-            <% @user.sport_sessions.each do |sport_session| %>
-          <div class="card m-4">
-            <div class="card-body d-flex justify-content-between">
-              <p><strong><%= sport_session.start_time.strftime('%d %b') %></strong></p>
-              <p><%= sport_session.start_time.strftime('%Y') %></p>
-              <div class="d-flex flex-column bd-highlight border-right">
-                <div class="bd-highlight"><p><%= sport_session.title %></p></div>
-                <div class="bd-highlight"><p>Capacity: <%= sport_session.capacity %></p></div>
-                <div class="bd-highlight"><p>$<%= sport_session.price.round %></p></div>
+            <% if @user.sport_sessions == [] %>
+              <p>Looks like you haven’t create any classes yet<br>
+                Ready to give one?</p>
+            <% else %>
+              <% @user.sport_sessions.each do |sport_session| %>
+            <div class="card m-4">
+              <div class="card-body d-flex justify-content-between sessioncard">
+                <p><strong><%= sport_session.start_time.strftime('%d %b') %></strong></p>
+                <p><%= sport_session.start_time.strftime('%Y') %></p>
+                <div class="d-flex flex-column bd-highlight border-right">
+                  <div class="bd-highlight"><p><%= sport_session.title %></p></div>
+                  <div class="bd-highlight"><p>Capacity: <%= sport_session.capacity %></p></div>
+                  <div class="bd-highlight"><p>$<%= sport_session.price.round %></p></div>
+                </div>
+                <br>
+                <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i id="icone" class="far fa-trash-alt"></i>
+                <% end %>
               </div>
-              <br>
-              <%= link_to sport_session_path(sport_session), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i id="icone" class="far fa-trash-alt"></i>
-              <% end %>
             </div>
-          </div>
+              <% end %>
             <% end %>
-          <% end %>
-      </div>
-      <br>
-
-
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="">
-        <h3>My bookings</h3><br>
-        <% if @user.bookings == [] %>
-          <p>Looks like you haven’t booked any classes yet.<br>
-          Ready to find one?</p>
-        <% else %>
-        <% @user.bookings.each do |booking| %>
-          <div class="card m-4 sessioncard">
-            <div class="card-body d-flex justify-content-between">
-              <div class="flex-column border-right pr-4">
-                <p><strong><%= booking.booking_date.strftime('%d %b')%></strong></p>
-                <p><strong><%= booking.booking_date.strftime('%Y')%></strong></p>
-                <p><%= booking.sport_session.start_time.strftime('%H')%>h</p>
-              </div>
-              <div class="flex-column align-items-left">
-                <h5><%= booking.sport_session.title.upcase %></h5>
-                <p>With: <%= booking.sport_session.user.first_name %></p>
-                <p>Where: in  <%= booking.sport_session.location%></p>
-              </div>
-            <br>
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i id="icone" class="far fa-trash-alt"></i>
-           </div>
-          </div>
-        <% end %>
-        <% end %>
-        <% end %>
-      </div>
-
-
+          <% if @user.bookings == [] %>
+            <p>Looks like you haven’t booked any classes yet.<br>
+            Ready to find one?</p>
+          <% else %>
+          <% @user.bookings.each do |booking| %>
+            <div class="card m-4 sessioncard">
+              <div class="card-body d-flex justify-content-between">
+                <div class="flex-column border-right pr-4">
+                  <p><strong><%= booking.booking_date.strftime('%d %b')%></strong></p>
+                  <p><strong><%= booking.booking_date.strftime('%Y')%></strong></p>
+                  <p><%= booking.sport_session.start_time.strftime('%H')%>h</p>
+                </div>
+                <div class="flex-column align-items-left">
+                  <h5><%= booking.sport_session.title.upcase %></h5>
+                  <p>With: <%= booking.sport_session.user.first_name %></p>
+                  <p>Where: in  <%= booking.sport_session.location%></p>
+                </div>
+              <br>
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="icone" class="far fa-trash-alt"></i>
+             </div>
+            </div>
+          <% end %>
+          <% end %>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+
