@@ -4,24 +4,48 @@ body {
   background-color: white;
 }
 
+.titles-box{
+  background-image:
+  linear-gradient(to bottom, rgba(255, 164, 115, 0.3), rgba(245, 129, 52, 0.6));
+  width: 750px;
+  height: 100;
+  margin-top: 100px;
+  border-radius: 0px 5px 5px 0px;
+}
+
 .home-titles{
   color: black;
   font-family: $home-titles;
   font-size: 30px;
   font-weight: 400px;
-  margin-bottom: 40px;
+  margin-top: 20PX; ;
+  margin-bottom: 20px;
   padding-top: 40px;
+  padding-left: 120px;
+  opacity: 0.7;
 }
 
 .ad {
-  background-image: url('https://images.unsplash.com/photo-1599079708942-4330c2a304a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-image:
+  linear-gradient(to bottom, rgba(179, 75, 15, 0.2), rgba(17, 8, 2, 0.8)),  
+  url('https://images.unsplash.com/photo-1599079708942-4330c2a304a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
   background-position: center;
   background-size: cover;
   height: 300px;
-  width: 900px;
-  opacity: 0.5;
+  width: 1000px;
+  opacity: 0.98;
   padding-left: 35px;
   margin-bottom: 40px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.ad-text {
+  color:rgb(255, 255, 255);
+  font-family: $banner-font;
+  font-size: 250px;
+  padding-right: 20px;
+  text-align: center; 
+  opacity: 0.3;
 }
 
 .container img {
