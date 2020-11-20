@@ -63,7 +63,7 @@ user3.photo.attach(io: file, filename: 'user3.jpeg', content_type: 'image/jpeg')
 p user3.save!
 session3 = SportSession.new(
   sport: 'chess',
-  title: 'Proffesional Level Chess Classes',
+  title: 'Professional Level Chess Classes',
   description: 'Learn to play chess with a Grand Master',
   location: 'Benito Juarez, Mexico City',
   start_time: Time.new(2021, 1, 1, 20, 0, 0),
