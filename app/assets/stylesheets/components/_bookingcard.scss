@@ -1,7 +1,10 @@
 .sessioncard {
   width: 100%;
-  height: 140px;
+  min-height: 80px;
   border-bottom: 1px solid $linecolor;
+  p {
+    margin: 0px;
+  }
 }
 
 .bookingdescription {
